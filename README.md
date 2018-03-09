@@ -4,7 +4,7 @@ Intelligent BackTesting System
 
 It is currently in development - if you find a bug, please submit an issue.
 
-Read the docs here: **[Modules](build/html/index.html)**.
+Read the docs here: **[Modules](docs/html/index.html)**.
 
 What is Intelligent BackTesting System?
 -----------
@@ -52,7 +52,7 @@ Getting Started
      | Aug 06, 2017 | 3257.61 |  3293.29|3155.6 |3213.94|1105030000|3213.94
     
     
-###. Import Modules
+###Import Modules
 ```
 from __future__ import print_function
 import datetime
@@ -65,14 +65,15 @@ from data import HistoricCSVDataHandler
 from excaution import SimulatedExecutionHandler
 from portfolio import Portfolio
 ```
-Users can directly use the  modules in src/. And details of each modules are descripted **[here](build/html/index.html)**.
+Users can directly use the  modules in src/. And details of each modules are descripted **[here](docs/html/index.html)**.
 
 
-###. Strategy
+###Strategy
 In this part, we use ***Moving Average Crossover technical system***  to write this strategy.
 
 Now we turn to the creation of the MovingAverageCrossStrategy. The strategy requires both the bars DataHandler, the events Event Queue and the lookback periods for the simple moving averages that are going to be employed within the strategy. I’ve chosen 100 and 400 as the "short" and "long" lookback periods for this strategy.
-The final attribute, bought, is used to tell the Strategy when the backtest is actually "in the market". Entry signals are only generated if this is "OUT" and exit signals are only ever generated if this is "LONG" or "SHORT":
+
+The final attribute, bought, is used to tell the Strategy when the backtest is actually "in the market". Entry signals are only generated if this is "OUT" and exit signals are only ever generated if this is "LONG" or "SHORT":
 
 ```
 class MovingAverageCrossStrategy(Strategy):
@@ -96,8 +97,8 @@ class MovingAverageCrossStrategy(Strategy):
 
 The core of the strategy is the calculate_signals method. The code is in [***mac***](demo/mac.py).
 
-###. Visualize Performance
-After running the strategy, we can get data called ***'equity.csv'***. Then running [***plot_performace***](demo/plot_performance.py) can get the performance.
+###Visualize Performance
+After running the strategy, we can get data called ***equity.csv***. Then running [***plot_performace***](demo/plot_performance.py) can get the performance.
 ![performance] (images/performance)
 
 

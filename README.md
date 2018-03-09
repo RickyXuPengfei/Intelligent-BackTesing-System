@@ -1,4 +1,4 @@
-![logo] (images/logo1.png)
+![logo] (./images/logo1.png)
 Intelligent BackTesting System
 ==============================
 
@@ -37,13 +37,13 @@ Features
 * Matplotlib
 
 ## Architecture:
-![Architecture] (images/Architecture.png)
+![Architecture] (./images/Architecture.png)
 
 
 Getting Started
 ---------------
 
-###. DataFormat
+### DataFormat
 
  All all data store in datas/. And each csv file should fit the format.
  
@@ -52,7 +52,7 @@ Getting Started
      | Aug 06, 2017 | 3257.61 |  3293.29|3155.6 |3213.94|1105030000|3213.94
     
     
-###Import Modules
+### Import Modules
 ```
 from __future__ import print_function
 import datetime
@@ -68,7 +68,7 @@ from portfolio import Portfolio
 Users can directly use the  modules in src/. And details of each modules are descripted **[here](docs/html/index.html)**.
 
 
-###Strategy
+### Strategy
 In this part, we use ***Moving Average Crossover technical system***  to write this strategy.
 
 Now we turn to the creation of the MovingAverageCrossStrategy. The strategy requires both the bars DataHandler, the events Event Queue and the lookback periods for the simple moving averages that are going to be employed within the strategy. I’ve chosen 100 and 400 as the "short" and "long" lookback periods for this strategy.
@@ -97,9 +97,9 @@ class MovingAverageCrossStrategy(Strategy):
 
 The core of the strategy is the calculate_signals method. The code is in [***mac***](demo/mac.py).
 
-###Visualize Performance
+### Visualize Performance
 After running the strategy, we can get data called ***equity.csv***. Then running [***plot_performace***](demo/plot_performance.py) can get the performance.
-![performance] (images/performance)
+![performance] (./images/performance)
 
 
 Discussing

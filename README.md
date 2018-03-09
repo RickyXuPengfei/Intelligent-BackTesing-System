@@ -1,4 +1,4 @@
-![] (https://github.com/RickyXuPengfei/Intelligent-BackTesing-System/tree/master/images/logo1.png)
+![] (./images/logo1.png)
 Intelligent BackTesting System
 ==============================
 

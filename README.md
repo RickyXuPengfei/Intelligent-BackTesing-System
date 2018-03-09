@@ -5,7 +5,7 @@ Intelligent BackTesting System
 
 It is currently in development - if you find a bug, please submit an issue.
 
-Read the docs here: **[Modules](docs/html/index.html)**.
+Read the docs here: **[Modules](http://rickyxu.coding.me/IntelligentBackTesting/)**.
 
 What is Intelligent BackTesting System?
 -----------
@@ -66,7 +66,7 @@ from data import HistoricCSVDataHandler
 from excaution import SimulatedExecutionHandler
 from portfolio import Portfolio
 ```
-Users can directly use the  modules in src/. And details of each modules are descripted **[here](docs/html/index.html)**.
+Users can directly use the  modules in src/. And details of each modules are descripted **[here](http://rickyxu.coding.me/IntelligentBackTesting/)**.
 
 
 ### Strategy

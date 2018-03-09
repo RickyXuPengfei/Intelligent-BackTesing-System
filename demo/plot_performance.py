@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('equity.csv')
 data = data.set_index(['datetime'])
 
-fig = plt.figure()
+fig = plt.figure(figsize=(13,7))
 fig.patch.set_facecolor('white')
 
 ax1 = fig.add_subplot(311, ylabel='Portfolio value, %')

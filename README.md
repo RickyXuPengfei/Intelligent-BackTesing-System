@@ -1,4 +1,4 @@
-![] (./images/logo1.png)
+![] (http://Intelligent-BackTesing-System/images/logo1.png)
 Intelligent BackTesting System
 ==============================
 
@@ -37,7 +37,7 @@ Features
 * Matplotlib
 
 ## Architecture:
-![Architecture] (https://github.com/RickyXuPengfei/Intelligent-BackTesing-System/tree/master/images/Architecture.png)
+![Architecture] (http://Intelligent-BackTesing-System/images/Architecture.png)
 
 
 Getting Started
@@ -99,7 +99,7 @@ The core of the strategy is the calculate_signals method. The code is in [***mac
 
 ### Visualize Performance
 After running the strategy, we can get data called ***equity.csv***. Then running [***plot_performace***](demo/plot_performance.py) can get the performance.
-![performance] (https://github.com/RickyXuPengfei/Intelligent-BackTesing-System/tree/master/images/performance)
+![performance] (http://Intelligent-BackTesing-System/images/performance)
 
 
 Discussing

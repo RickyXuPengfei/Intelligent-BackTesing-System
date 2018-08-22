@@ -1,13 +1,16 @@
 from __future__ import print_function
+
 import datetime
+
 import numpy as np
 
-from strategy import Strategy
-from event import SignalEvent
 from backtest import Backtest
 from data import HistoricCSVDataHandler
+from event import SignalEvent
 from excaution import SimulatedExecutionHandler
 from portfolio import Portfolio
+from strategy import Strategy
+
 
 class MovingAverageCrossStrategy(Strategy):
 
@@ -19,15 +22,14 @@ class MovingAverageCrossStrategy(Strategy):
         self.long_window = long_window
         self.bought = self._calculate_initial_bought()
 
-
     def _calculate_initial_bought(self):
         """
         Adds keys to the bought dictionary for all symbols and sets them to ’OUT’.
         """
-        bought = {s:'OUT' for s in self.symbol_list}
-        return  bought
+        bought = {s: 'OUT' for s in self.symbol_list}
+        return bought
 
-    def calculate_signals(self,event):
+    def calculate_signals(self, event):
         if event.type == 'MARKET':
             for s in self.symbol_list:
                 bars = self.bars.get_latest_bars_values(s, 'adj_close', N=self.long_window)
@@ -40,27 +42,28 @@ class MovingAverageCrossStrategy(Strategy):
                     dt = datetime.datetime.utcnow()
                     sig_dir = ""
 
-                    if short_sma > long_sma and self.bought[s]== "OUT":
-                        print ("LONG: %s"%bar_date)
+                    if short_sma > long_sma and self.bought[s] == "OUT":
+                        print("LONG: %s" % bar_date)
                         sig_dir = 'LONG'
 
-                        signal = SignalEvent(1,symbol,dt,sig_dir,1.0)
+                        signal = SignalEvent(1, symbol, dt, sig_dir, 1.0)
                         self.events.put(signal)
-                        self.bought[s]='LONG'
+                        self.bought[s] = 'LONG'
 
                     elif short_sma < long_sma and self.bought[s] == "LONG":
-                        print ("SHORT: %s"%bar_date)
+                        print("SHORT: %s" % bar_date)
                         sig_dir = 'EXIT'
                         signal = SignalEvent(1, symbol, dt, sig_dir, 1.0)
                         self.events.put(signal)
                         self.bought[s] = 'OUT'
 
+
 if __name__ == "__main__":
-    csv_dir ="../datas/"
+    csv_dir = "../datas/"
     symbol_list = ["BitCoin"]
     initial_capital = 100000.0
     heartbeat = 0.0
-    start_date = datetime.datetime(2013,4,28)
+    start_date = datetime.datetime(2013, 4, 28)
 
     backtest = Backtest(
         csv_dir, symbol_list, initial_capital, heartbeat,
